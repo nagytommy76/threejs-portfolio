@@ -1,15 +1,18 @@
 'use client'
-
-import { /* useFrame, useThree,*/ useLoader } from '@react-three/fiber'
+import { useRef } from 'react'
+import { OrbitControls } from '@react-three/drei'
+import { /* useFrame,*/ useThree, useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 export function LotusCar(props: any) {
    const gltf = useLoader(GLTFLoader, '/3d/Car.glb')
    const { nodes, materials } = gltf
+   const carRef = useRef(null)
 
    return (
-      <group {...props} dispose={null}>
-         <group scale={0.01}>
+      <>
+         <OrbitControls />
+         <group {...props} ref={carRef} dispose={null}>
             <primitive object={nodes._rootJoint} />
             <mesh
                castShadow
@@ -2273,7 +2276,7 @@ export function LotusCar(props: any) {
                position={[0, 0.193, 0]}
             />
          </group>
-      </group>
+      </>
    )
 }
 

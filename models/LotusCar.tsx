@@ -1,17 +1,32 @@
 'use client'
-import { useRef } from 'react'
-import { OrbitControls } from '@react-three/drei'
-import { /* useFrame,*/ useThree, useLoader } from '@react-three/fiber'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { useRef, useEffect } from 'react'
+import { useGLTF, useAnimations } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+
+useGLTF.preload('/3d/Car.glb')
 
 export function LotusCar(props: any) {
-   const gltf = useLoader(GLTFLoader, '/3d/Car.glb')
-   const { nodes, materials } = gltf
+   // const gltf = useLoader(GLTFLoader, '/3d/Car.glb')
+   const gltf = useGLTF('/3d/Car.glb')
+   const { nodes, materials, animations, scene } = gltf
    const carRef = useRef(null)
+   const { actions, clips } = useAnimations(animations, scene)
+
+   // useEffect(() => {
+   //    console.log(actions)
+   //    // actions
+   // }, [])
+
+   useFrame((state) => {
+      const { current } = carRef
+      if (current) {
+         current.rotation.y += 0.001
+      }
+   })
 
    return (
       <>
-         <OrbitControls />
+         {/* <OrbitControls /> */}
          <group {...props} ref={carRef} dispose={null}>
             <primitive object={nodes._rootJoint} />
             <mesh

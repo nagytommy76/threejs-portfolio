@@ -1,13 +1,241 @@
 'use client'
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
 
-export default function Room(props) {
-   const group = useRef(null)
-   const { nodes, materials } = useGLTF('/3d/Room.glb')
+import * as THREE from 'three'
+
+type GLTFResult = GLTF & {
+   nodes: {
+      Walls: THREE.Mesh
+      WallBorder: THREE.Mesh
+      Chair: THREE.Mesh
+      Circle: THREE.Mesh
+      Circle001: THREE.Mesh
+      Cube001: THREE.Mesh
+      Cylinder005: THREE.Mesh
+      Cylinder006: THREE.Mesh
+      Cylinder007: THREE.Mesh
+      Cylinder008: THREE.Mesh
+      Cylinder009: THREE.Mesh
+      Cylinder010: THREE.Mesh
+      Plane: THREE.Mesh
+      Plane001: THREE.Mesh
+      Cylinder012_1: THREE.Mesh
+      Cylinder012_2: THREE.Mesh
+      Lamp: THREE.Mesh
+      Flower: THREE.Mesh
+      Cylinder011: THREE.Mesh
+      Plane003: THREE.Mesh
+      Plane004: THREE.Mesh
+      Plane005: THREE.Mesh
+      Plane006: THREE.Mesh
+      Plane008: THREE.Mesh
+      Background: THREE.Mesh
+      Background001: THREE.Mesh
+      CertFrameReact: THREE.Mesh
+      React: THREE.Mesh
+      CertFrameFrontend: THREE.Mesh
+      Frontend: THREE.Mesh
+      CertFrameLLM: THREE.Mesh
+      LLM: THREE.Mesh
+      ThomasText: THREE.Mesh
+      Flooring2: THREE.Mesh
+      Cylinder: THREE.Mesh
+      Cylinder001: THREE.Mesh
+      Cylinder002: THREE.Mesh
+      WindowShade: THREE.Mesh
+      Cylinder003: THREE.Mesh
+      Cylinder004: THREE.Mesh
+      WindowFrame: THREE.Mesh
+      Window: THREE.Mesh
+      WindowGlass: THREE.Mesh
+      Matress: THREE.Mesh
+      Pillow01: THREE.Mesh
+      Pillow02: THREE.Mesh
+      Sheet: THREE.Mesh
+      BedFrame: THREE.Mesh
+      DeskTable: THREE.Mesh
+      DeskBottom: THREE.Mesh
+      DeskFrame: THREE.Mesh
+      DeskLeg: THREE.Mesh
+      DeskLegs: THREE.Mesh
+      Circle002: THREE.Mesh
+      Cube027: THREE.Mesh
+      Cube027_1: THREE.Mesh
+      Cube009: THREE.Mesh
+      Mouse: THREE.Mesh
+      Cylinder012: THREE.Mesh
+      Mouse001: THREE.Mesh
+      Cube: THREE.Mesh
+      Cube002: THREE.Mesh
+      Cube003: THREE.Mesh
+      ['be_quiet!']: THREE.Mesh
+      Cube017: THREE.Mesh
+      BézierCurve: THREE.Mesh
+      BézierCurve001: THREE.Mesh
+      BézierCurve002: THREE.Mesh
+      Baseboard: THREE.Mesh
+      Curve: THREE.Mesh
+      Curve001: THREE.Mesh
+      Curve002: THREE.Mesh
+      Curve003: THREE.Mesh
+      Text: THREE.Mesh
+      Cube005: THREE.Mesh
+      Curve006: THREE.Mesh
+      Curve004: THREE.Mesh
+      Curve005: THREE.Mesh
+      Curve007: THREE.Mesh
+      Curve008: THREE.Mesh
+      Curve009: THREE.Mesh
+      Curve010: THREE.Mesh
+      Curve011: THREE.Mesh
+      Cube006: THREE.Mesh
+      Curve015: THREE.Mesh
+      Curve012: THREE.Mesh
+      Curve013: THREE.Mesh
+      Curve014: THREE.Mesh
+      Curve016: THREE.Mesh
+      Curve017: THREE.Mesh
+      Cube007: THREE.Mesh
+      Curve018: THREE.Mesh
+      Curve019: THREE.Mesh
+      Curve020: THREE.Mesh
+      Text001: THREE.Mesh
+      Cube008: THREE.Mesh
+      Curve021: THREE.Mesh
+      Cube014: THREE.Mesh
+      Text002: THREE.Mesh
+      Curve022: THREE.Mesh
+      Cube015: THREE.Mesh
+      Curve023: THREE.Mesh
+      Text003: THREE.Mesh
+      KeyboardButton021: THREE.Mesh
+      Cube018: THREE.Mesh
+      Cube019: THREE.Mesh
+      kEYBOARDbASE: THREE.Mesh
+      KeyboardButton: THREE.Mesh
+      KeyboardButton001: THREE.Mesh
+      KeyboardButton002: THREE.Mesh
+      KeyboardButton003: THREE.Mesh
+      KeyboardButton004: THREE.Mesh
+      KeyboardButton005: THREE.Mesh
+      KeyboardButton006: THREE.Mesh
+      KeyboardButton007: THREE.Mesh
+      KeyboardButton008: THREE.Mesh
+      KeyboardButton009: THREE.Mesh
+      KeyboardButton010: THREE.Mesh
+      KeyboardButton011: THREE.Mesh
+      KeyboardButton012: THREE.Mesh
+      KeyboardButton013: THREE.Mesh
+      KeyboardButton014: THREE.Mesh
+      KeyboardButton015: THREE.Mesh
+      KeyboardButton016: THREE.Mesh
+      KeyboardButton018: THREE.Mesh
+      KeyboardButton019: THREE.Mesh
+      KeyboardButton020: THREE.Mesh
+      KeyboardButtonSpace: THREE.Mesh
+      KeyboardButtonSpace001: THREE.Mesh
+      KeyboardButtonSpace002: THREE.Mesh
+      KeyboardButtonSpace003: THREE.Mesh
+      KeyboardButtonSpace004: THREE.Mesh
+      KeyboardButtonSpace005: THREE.Mesh
+      KeyboardButtonSpace006: THREE.Mesh
+      KeyboardButtonSpace007: THREE.Mesh
+      KeyboardButtonSpace008: THREE.Mesh
+      Cylinder013: THREE.Mesh
+      BézierCurve003: THREE.Mesh
+      Plane009: THREE.Mesh
+      Plane010: THREE.Mesh
+      Plane011: THREE.Mesh
+      Plane012: THREE.Mesh
+      Plane013: THREE.Mesh
+      Plane014: THREE.Mesh
+      Plane015: THREE.Mesh
+      Plane016: THREE.Mesh
+      Plane017: THREE.Mesh
+   }
+   materials: {
+      Walls: THREE.MeshStandardMaterial
+      FloorBorder: THREE.MeshStandardMaterial
+      Chair: THREE.MeshStandardMaterial
+      ['Material.010']: THREE.MeshStandardMaterial
+      ['Material.009']: THREE.MeshStandardMaterial
+      ['Material.008']: THREE.MeshStandardMaterial
+      ['Material.011']: THREE.MeshStandardMaterial
+      ['Material.002']: THREE.MeshStandardMaterial
+      ['Material.007']: THREE.MeshStandardMaterial
+      Hexagon2: THREE.MeshStandardMaterial
+      Hexagon3: THREE.MeshStandardMaterial
+      ['Material.013']: THREE.MeshStandardMaterial
+      Flower: THREE.MeshStandardMaterial
+      Vaze: THREE.MeshStandardMaterial
+      ['Material.005']: THREE.MeshStandardMaterial
+      ['Material.004']: THREE.MeshStandardMaterial
+      ['Material.003']: THREE.MeshStandardMaterial
+      ['Material.006']: THREE.MeshStandardMaterial
+      Flower1: THREE.MeshStandardMaterial
+      BackgroundPlane: THREE.MeshStandardMaterial
+      PictureFrame: THREE.MeshPhysicalMaterial
+      CertReact: THREE.MeshStandardMaterial
+      Cert: THREE.MeshStandardMaterial
+      Cert1: THREE.MeshStandardMaterial
+      ThomasText: THREE.MeshStandardMaterial
+      Flooring: THREE.MeshStandardMaterial
+      Shader: THREE.MeshStandardMaterial
+      Blinder: THREE.MeshStandardMaterial
+      ['Blinder.001']: THREE.MeshStandardMaterial
+      WindowFrame: THREE.MeshStandardMaterial
+      Window: THREE.MeshStandardMaterial
+      WindowLight: THREE.MeshStandardMaterial
+      Matress: THREE.MeshStandardMaterial
+      Pillow: THREE.MeshStandardMaterial
+      Pillow1: THREE.MeshStandardMaterial
+      Sheet: THREE.MeshStandardMaterial
+      BedFrame: THREE.MeshStandardMaterial
+      DeskTable: THREE.MeshStandardMaterial
+      DeskLeg1: THREE.MeshStandardMaterial
+      ['Material.012']: THREE.MeshStandardMaterial
+      DeskLeg: THREE.MeshStandardMaterial
+      MonitorBase: THREE.MeshStandardMaterial
+      ['Material.016']: THREE.MeshStandardMaterial
+      MonitorScreen: THREE.MeshStandardMaterial
+      PCCase: THREE.MeshStandardMaterial
+      bequiet: THREE.MeshStandardMaterial
+      KeyboardCable: THREE.MeshStandardMaterial
+      Baseboard_material: THREE.MeshStandardMaterial
+      ['SVGMat.001']: THREE.MeshStandardMaterial
+      ['SVGMat.002']: THREE.MeshStandardMaterial
+      Text: THREE.MeshStandardMaterial
+      ['SVGMat.013']: THREE.MeshStandardMaterial
+      ['SVGMat.010']: THREE.MeshStandardMaterial
+      ['SVGMat.011']: THREE.MeshStandardMaterial
+      ['SVGMat.012']: THREE.MeshStandardMaterial
+      ['SVGMat.015']: THREE.MeshStandardMaterial
+      ['SVGMat.016']: THREE.MeshStandardMaterial
+      SVGMat: THREE.MeshStandardMaterial
+      ['SVGMat.004']: THREE.MeshStandardMaterial
+      ['SVGMat.005']: THREE.MeshStandardMaterial
+      ['Material.014']: THREE.MeshStandardMaterial
+      Keyboard: THREE.MeshStandardMaterial
+      ['Material.001']: THREE.MeshStandardMaterial
+      test: THREE.MeshStandardMaterial
+   }
+}
+
+import React, { JSX, useRef } from 'react'
+import { useFrame } from '@react-three/fiber'
+import { useGLTF } from '@react-three/drei'
+import { Html } from '@react-three/drei'
+import { GLTF } from 'three-stdlib'
+
+export default function Room(props: JSX.IntrinsicElements['group']) {
+   const roomRef = useRef(THREE.Mesh)
+   const { nodes, materials } = useGLTF('/3d/Room.glb') as unknown as GLTFResult
+
+   // useFrame((state, delta, xrFrame) => {
+   //    roomRef.current.rotation.y = -0.8 + Math.sin(state.clock.elapsedTime)
+   // })
 
    return (
-      <group ref={group} {...props} dispose={null}>
+      <group ref={roomRef} {...props}>
          <mesh
             castShadow
             receiveShadow
@@ -439,7 +667,42 @@ export default function Room(props) {
                receiveShadow
                geometry={nodes.Cube027_1.geometry}
                material={materials.MonitorScreen}
-            />
+            >
+               <Html
+                  transform
+                  occlude
+                  distanceFactor={1.5}
+                  position={[1, -0.9, 0.793]} // Push slightly in front of screen
+                  rotation={[0, 0, 0]} // Adjust based on screen orientation
+               >
+                  <div
+                     style={{
+                        width: '300px',
+                        height: '200px',
+                        background: 'red',
+                        color: 'white',
+                        overflowY: 'auto',
+                        padding: '10px',
+                        borderRadius: '8px',
+                     }}
+                  >
+                     <h2>My Projects</h2>
+                     <ul>
+                        <li>
+                           <a href='https://github.com/you/project1' target='_blank'>
+                              Project 1
+                           </a>
+                        </li>
+                        <li>
+                           <a href='https://github.com/you/project2' target='_blank'>
+                              Project 2
+                           </a>
+                        </li>
+                        {/* Add more links */}
+                     </ul>
+                  </div>
+               </Html>
+            </mesh>
             <mesh
                castShadow
                receiveShadow

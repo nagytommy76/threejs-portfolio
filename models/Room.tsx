@@ -1,6 +1,7 @@
 'use client'
 
 import * as THREE from 'three'
+import { Html } from '@react-three/drei'
 
 type GLTFResult = GLTF & {
    nodes: {
@@ -221,18 +222,12 @@ type GLTFResult = GLTF & {
 }
 
 import React, { JSX, useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
-import { Html } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
 export default function Room(props: JSX.IntrinsicElements['group']) {
    const roomRef = useRef(THREE.Mesh)
    const { nodes, materials } = useGLTF('/3d/Room.glb') as unknown as GLTFResult
-
-   // useFrame((state, delta, xrFrame) => {
-   //    roomRef.current.rotation.y = -0.8 + Math.sin(state.clock.elapsedTime)
-   // })
 
    return (
       <group ref={roomRef} {...props}>
@@ -659,31 +654,32 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Cube027.geometry}
-               material={materials['Material.016']}
-            />
-            <mesh
-               castShadow
-               receiveShadow
                geometry={nodes.Cube027_1.geometry}
                material={materials.MonitorScreen}
+               rotation={[0, 0, 0]}
             >
                <Html
+                  castShadow
+                  receiveShadow
+                  center
+                  fullscreen
+                  distanceFactor={3}
+                  scale={[0.2, 0.2, 0.2]}
+                  rotation-y={1.57}
+                  position={[0.006, 0, 0]}
                   transform
-                  occlude
-                  distanceFactor={1.5}
-                  position={[1, -0.9, 0.793]} // Push slightly in front of screen
-                  rotation={[0, 0, 0]} // Adjust based on screen orientation
+                  occlude={'blending'}
+                  style={{
+                     width: '665px',
+                     height: '290px',
+                  }}
                >
                   <div
                      style={{
-                        width: '300px',
-                        height: '200px',
+                        width: '665x',
+                        height: '290px',
                         background: 'red',
                         color: 'white',
-                        overflowY: 'auto',
-                        padding: '10px',
-                        borderRadius: '8px',
                      }}
                   >
                      <h2>My Projects</h2>
@@ -698,11 +694,20 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
                               Project 2
                            </a>
                         </li>
-                        {/* Add more links */}
                      </ul>
                   </div>
                </Html>
             </mesh>
+
+            <mesh
+               onClick={() => {
+                  console.log('Monitor Kijelző')
+               }}
+               castShadow
+               receiveShadow
+               geometry={nodes.Cube027.geometry}
+               material={materials['Material.016']}
+            ></mesh>
             <mesh
                castShadow
                receiveShadow

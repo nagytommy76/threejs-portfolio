@@ -1,6 +1,6 @@
 'use client'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Environment } from '@react-three/drei'
+import { OrbitControls, Environment, ContactShadows } from '@react-three/drei'
 import { Suspense } from 'react'
 import Room from '@/models/Room'
 
@@ -23,8 +23,9 @@ export default function HomePage() {
                   rotation={[0, 0, 0]}
                />
                {/* </ScrollControls> */}
+               <Environment preset='city' />
             </Suspense>
-            <Environment preset='city' />
+            <ContactShadows position={[0, -4.5, 0]} scale={20} blur={2} far={4.5} />
          </Canvas>
       </section>
    )

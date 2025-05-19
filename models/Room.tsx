@@ -675,6 +675,7 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
                   }}
                >
                   <div
+                     onPointerDown={(e) => e.stopPropagation()}
                      style={{
                         width: '665x',
                         height: '290px',

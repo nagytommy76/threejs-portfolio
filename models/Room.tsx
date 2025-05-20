@@ -360,7 +360,9 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
             geometry={nodes.Lamp.geometry}
             material={materials['Material.013']}
             position={[-1.599, 0.95, 1.451]}
-         />
+         >
+            <pointLight castShadow position={[0.2, 0, 0]} intensity={0.5} color={'#ffffff'} />
+         </mesh>
          <mesh
             castShadow
             receiveShadow

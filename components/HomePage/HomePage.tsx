@@ -11,15 +11,16 @@ export default function HomePage() {
             <directionalLight
                color={'#ffffff'}
                position={[1, 1, 1]}
-               intensity={3}
-               castShadow
+               intensity={1}
+               castShadow={true}
                shadow-mapSize={2048}
                shadow-bias={-0.001}
             />
-            {/* <spotLight color={'#ffffff'} position={[5, -2, 0]} intensity={200} angle={0.5} penumbra={1} /> */}
-            {/* <hemisphereLight color={'#ffffff'} groundColor='#000000' intensity={2.5} />
-            <ambientLight intensity={0.4} /> */}
-            <SoftShadows samples={10} />
+            {/* <spotLight color={'#ffffff'} position={[5, -2, 0]} intensity={10} angle={0.5} penumbra={1} /> */}
+            {/* <hemisphereLight color={'#ffffff'} groundColor='#000000' intensity={0.4} /> */}
+            {/* <ambientLight intensity={0.1} /> */}
+            <pointLight position={[-1, 2.5, 0]} intensity={1} color={'#ffffff'} />
+            <SoftShadows samples={10} size={10} />
             <Suspense fallback={null}>
                <OrbitControls
                   enablePan={true}

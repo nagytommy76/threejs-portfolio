@@ -361,7 +361,22 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
             material={materials['Material.013']}
             position={[-1.599, 0.95, 1.451]}
          >
-            <pointLight castShadow position={[0.2, 0, 0]} intensity={0.5} color={'#ffffff'} />
+            <pointLight
+               castShadow
+               position={[0.2, 0, 0]}
+               intensity={0.5}
+               color={'#ffffff'}
+               shadow-mapSize-width={512}
+               shadow-mapSize-height={512}
+               shadow-camera-left={-10}
+               shadow-camera-right={10}
+               shadow-camera-top={10}
+               shadow-camera-bottom={-10}
+               shadow-camera-near={0.5}
+               shadow-camera-far={50}
+               shadow-bias={-0.005}
+            />
+            {/* <spotLight color={'#ffffff'} position={[-0, 0, 0]} intensity={10} angle={0.7} penumbra={1} /> */}
          </mesh>
          <mesh
             castShadow
@@ -377,7 +392,7 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
                receiveShadow
                geometry={nodes.Cylinder011.geometry}
                material={materials.Vaze}
-               position={[0.015, -0.13, -0.017]}
+               position={[0.015, -0.15, -0.03]}
                rotation={[-0.09, -1.215, 0.202]}
             />
             <mesh

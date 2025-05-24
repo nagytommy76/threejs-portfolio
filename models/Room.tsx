@@ -237,7 +237,24 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
             geometry={nodes.Walls.geometry}
             material={materials.Walls}
             position={[-0.036, 1.568, -0.009]}
-         />
+         >
+            {/* Left Wall light */}
+            <rectAreaLight
+               intensity={1}
+               width={0.25}
+               height={3.85}
+               position={[-1.6, 1.4, 0]}
+               rotation={[-1.57, 0, 0]}
+            />
+            {/* Right Wall light */}
+            <rectAreaLight
+               intensity={1}
+               width={3.85}
+               height={0.25}
+               position={[0, 1.4, -1.65]}
+               rotation={[-1.57, 0, 0]}
+            />
+         </mesh>
          <mesh
             castShadow
             receiveShadow
@@ -364,7 +381,7 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
             <pointLight
                castShadow
                position={[0.2, 0, 0]}
-               intensity={0.5}
+               intensity={0.3}
                color={'#ffffff'}
                shadow-mapSize-width={512}
                shadow-mapSize-height={512}
@@ -451,54 +468,60 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
             position={[15.87, 0.768, -18.227]}
             rotation={[0, Math.PI / 2, 0]}
          />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.CertFrameReact.geometry}
-            material={materials.PictureFrame}
-            position={[-1.772, 1.373, -1.438]}
-            rotation={[0, 0, -Math.PI / 2]}
+         <group
+            onClick={() => {
+               console.log('Certek klikkk')
+            }}
          >
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.React.geometry}
-               material={materials.CertReact}
-               position={[0, 0.012, 0]}
-            />
-         </mesh>
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.CertFrameFrontend.geometry}
-            material={materials.PictureFrame}
-            position={[-1.772, 1.373, -1.103]}
-            rotation={[0, 0, -Math.PI / 2]}
-         >
+               geometry={nodes.CertFrameReact.geometry}
+               material={materials.PictureFrame}
+               position={[-1.772, 1.373, -1.438]}
+               rotation={[0, 0, -Math.PI / 2]}
+            >
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.React.geometry}
+                  material={materials.CertReact}
+                  position={[0, 0.012, 0]}
+               />
+            </mesh>
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Frontend.geometry}
-               material={materials.Cert}
-               position={[0, 0.011, -0.001]}
-            />
-         </mesh>
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.CertFrameLLM.geometry}
-            material={materials.PictureFrame}
-            position={[-1.772, 1.373, -0.767]}
-            rotation={[0, 0, -Math.PI / 2]}
-         >
+               geometry={nodes.CertFrameFrontend.geometry}
+               material={materials.PictureFrame}
+               position={[-1.772, 1.373, -1.103]}
+               rotation={[0, 0, -Math.PI / 2]}
+            >
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Frontend.geometry}
+                  material={materials.Cert}
+                  position={[0, 0.011, -0.001]}
+               />
+            </mesh>
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.LLM.geometry}
-               material={materials.Cert1}
-               position={[0, 0.011, -0.001]}
-            />
-         </mesh>
+               geometry={nodes.CertFrameLLM.geometry}
+               material={materials.PictureFrame}
+               position={[-1.772, 1.373, -0.767]}
+               rotation={[0, 0, -Math.PI / 2]}
+            >
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.LLM.geometry}
+                  material={materials.Cert1}
+                  position={[0, 0.011, -0.001]}
+               />
+            </mesh>
+         </group>
          <mesh
             castShadow
             receiveShadow
@@ -581,7 +604,15 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
             geometry={nodes.WindowGlass.geometry}
             material={materials.WindowLight}
             position={[0.999, 1.776, -1.955]}
-         />
+         >
+            <rectAreaLight
+               intensity={10}
+               width={0.8}
+               height={1.55}
+               position={[-0, -0, 0.05]}
+               rotation={[0, 3.15, 0]}
+            />
+         </mesh>
          <mesh
             castShadow
             receiveShadow

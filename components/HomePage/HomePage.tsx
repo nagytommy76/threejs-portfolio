@@ -7,30 +7,18 @@ import Room from '@/models/Room'
 export default function HomePage() {
    return (
       <section className='h-screen'>
-         <Canvas shadows className='bg-transparent w-full h-full' camera={{ near: 0.1, far: 50, fov: 80 }}>
+         <Canvas
+            shadows={true}
+            className='bg-transparent w-full h-full'
+            camera={{ near: 0.1, far: 50, fov: 80 }}
+         >
             <directionalLight
                color={'#ffffff'}
                position={[3, 1.9, 1.5]}
-               intensity={0.2}
+               intensity={1}
                castShadow={true}
-               shadow-mapSize-width={2048}
-               shadow-mapSize-height={2048}
-               shadow-camera-left={-10}
-               shadow-camera-right={10}
-               shadow-camera-top={10}
-               shadow-camera-bottom={-10}
-               shadow-camera-near={0.5}
-               shadow-camera-far={50}
-               shadow-bias={-0.005}
-               // shadow-normalBias={0.02}
-            />
-            <pointLight
-               position={[-1, 2.5, 0]}
-               castShadow
-               intensity={0.5}
-               color={'#ffffff'}
-               shadow-mapSize-width={2048}
-               shadow-mapSize-height={2048}
+               shadow-mapSize-width={1024}
+               shadow-mapSize-height={1024}
                shadow-camera-left={-10}
                shadow-camera-right={10}
                shadow-camera-top={10}
@@ -39,7 +27,7 @@ export default function HomePage() {
                shadow-camera-far={50}
                shadow-bias={-0.005}
             />
-            <ambientLight intensity={0.35} />
+            <ambientLight intensity={0.2} />
             <Suspense fallback={null}>
                <OrbitControls
                   enablePan={true}

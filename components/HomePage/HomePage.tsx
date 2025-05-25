@@ -9,6 +9,7 @@ export default function HomePage() {
       <section className='h-screen'>
          <Canvas
             shadows={true}
+            frameloop='demand'
             className='bg-transparent w-full h-full'
             camera={{ near: 0.1, far: 50, fov: 80 }}
          >

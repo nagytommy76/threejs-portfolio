@@ -1,7 +1,7 @@
 'use client'
+import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import { Suspense } from 'react'
 import Room from '@/models/Room'
 
 export default function HomePage() {
@@ -37,7 +37,7 @@ export default function HomePage() {
                   maxPolarAngle={Math.PI / 2.4}
                   maxDistance={5}
                />
-               <Room position={[0, 0, 0]} scale={[1, 1, 1]} rotation={[0, 0, 0]} />
+               <Room />
             </Suspense>
          </Canvas>
       </section>

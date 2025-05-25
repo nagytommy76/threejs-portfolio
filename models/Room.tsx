@@ -856,610 +856,631 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
             geometry={nodes.Baseboard.geometry}
             material={materials.Baseboard_material}
          />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Curve.geometry}
-            material={materials['SVGMat.001']}
-            position={[-1.762, 2.232, 1.168]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={1.849}
-         >
+         {/* ReactFrame */}
+         <group name='ReactFrame'>
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Curve001.geometry}
-               material={materials['SVGMat.002']}
-               position={[-0.062, 0, 0.062]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Curve002.geometry}
+               geometry={nodes.Curve.geometry}
                material={materials['SVGMat.001']}
-               position={[-0.062, 0, 0.062]}
-            />
+               position={[-1.762, 2.232, 1.168]}
+               rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+               scale={1.849}
+            >
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve001.geometry}
+                  material={materials['SVGMat.002']}
+                  position={[-0.062, 0, 0.062]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve002.geometry}
+                  material={materials['SVGMat.001']}
+                  position={[-0.062, 0, 0.062]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve003.geometry}
+                  material={materials['SVGMat.002']}
+                  position={[-0.062, 0, 0.062]}
+               />
+            </mesh>
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Curve003.geometry}
-               material={materials['SVGMat.002']}
-               position={[-0.062, 0, 0.062]}
-            />
-         </mesh>
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Text.geometry}
-            material={materials.Text}
-            position={[-1.76, 2.083, 1.166]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={1.772}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube005.geometry}
-            material={nodes.Cube005.material}
-            position={[-1.757, 2.174, 1.166]}
-            scale={1.353}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Curve006.geometry}
-            material={materials.Text}
-            position={[-1.764, 2.178, 0.747]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={1.353}
-         >
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Curve004.geometry}
+               geometry={nodes.Text.geometry}
                material={materials.Text}
-               position={[0.057, 0, 0]}
+               position={[-1.76, 2.083, 1.166]}
+               rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+               scale={1.772}
             />
+
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Curve005.geometry}
+               geometry={nodes.Cube005.geometry}
+               material={nodes.Cube005.material}
+               position={[-1.757, 2.174, 1.166]}
+               scale={1.353}
+            />
+         </group>
+         {/* NextFrame */}
+         <group name='NextFrame'>
+            <mesh
+               castShadow
+               receiveShadow
+               geometry={nodes.Curve006.geometry}
                material={materials.Text}
-               position={[-0.058, 0, 0]}
-            />
+               position={[-1.764, 2.178, 0.747]}
+               rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+               scale={1.353}
+            >
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve004.geometry}
+                  material={materials.Text}
+                  position={[0.057, 0, 0]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve005.geometry}
+                  material={materials.Text}
+                  position={[-0.058, 0, 0]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve007.geometry}
+                  material={materials.Text}
+                  position={[-0.014, 0, 0.014]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve008.geometry}
+                  material={materials.Text}
+                  position={[-0.105, 0, 0]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve009.geometry}
+                  material={materials.Text}
+                  position={[0.08, 0, 0.022]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve010.geometry}
+                  material={materials.Text}
+                  position={[0.092, 0, 0.014]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve011.geometry}
+                  material={materials.Text}
+                  position={[0.11, 0, 0.014]}
+               />
+            </mesh>
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Curve007.geometry}
-               material={materials.Text}
-               position={[-0.014, 0, 0.014]}
+               geometry={nodes.Cube006.geometry}
+               material={nodes.Cube006.material}
+               position={[-1.757, 2.174, 0.759]}
+               scale={1.353}
             />
+         </group>
+         {/* MongoDBFrame */}
+         <group name='MongoDBFrame'>
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Curve008.geometry}
-               material={materials.Text}
-               position={[-0.105, 0, 0]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Curve009.geometry}
-               material={materials.Text}
-               position={[0.08, 0, 0.022]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Curve010.geometry}
-               material={materials.Text}
-               position={[0.092, 0, 0.014]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Curve011.geometry}
-               material={materials.Text}
-               position={[0.11, 0, 0.014]}
-            />
-         </mesh>
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube006.geometry}
-            material={nodes.Cube006.material}
-            position={[-1.757, 2.174, 0.759]}
-            scale={1.353}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Curve015.geometry}
-            material={materials['SVGMat.013']}
-            position={[-1.765, 2.166, 0.391]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={1.353}
-         >
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Curve012.geometry}
-               material={materials['SVGMat.010']}
-               position={[-0.069, 0, -0.023]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Curve013.geometry}
-               material={materials['SVGMat.011']}
-               position={[-0.091, 0, -0.022]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Curve014.geometry}
-               material={materials['SVGMat.012']}
-               position={[-0.079, 0, 0.021]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Curve016.geometry}
-               material={materials.Shader}
-               position={[0.125, 0, -0.005]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Curve017.geometry}
+               geometry={nodes.Curve015.geometry}
                material={materials['SVGMat.013']}
-               position={[0.043, 0, 0.006]}
-            />
-         </mesh>
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube007.geometry}
-            material={nodes.Cube007.material}
-            position={[-1.758, 2.174, 0.353]}
-            scale={1.353}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Curve018.geometry}
-            material={materials['SVGMat.015']}
-            position={[-1.756, 2.22, -0.055]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={1.748}
-         >
+               position={[-1.765, 2.166, 0.391]}
+               rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+               scale={1.353}
+            >
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve012.geometry}
+                  material={materials['SVGMat.010']}
+                  position={[-0.069, 0, -0.023]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve013.geometry}
+                  material={materials['SVGMat.011']}
+                  position={[-0.091, 0, -0.022]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve014.geometry}
+                  material={materials['SVGMat.012']}
+                  position={[-0.079, 0, 0.021]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve016.geometry}
+                  material={materials.Shader}
+                  position={[0.125, 0, -0.005]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve017.geometry}
+                  material={materials['SVGMat.013']}
+                  position={[0.043, 0, 0.006]}
+               />
+            </mesh>
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Curve019.geometry}
-               material={materials['SVGMat.016']}
-               position={[-0.014, 0, 0.025]}
+               geometry={nodes.Cube007.geometry}
+               material={nodes.Cube007.material}
+               position={[-1.758, 2.174, 0.353]}
+               scale={1.353}
             />
+         </group>
+         {/* TypescriptFrame */}
+         <group name='TypescriptFrame'>
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Curve020.geometry}
-               material={materials['SVGMat.016']}
-               position={[0.034, 0, 0.025]}
-            />
-         </mesh>
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Text001.geometry}
-            material={materials.Text}
-            position={[-1.763, 2.048, -0.025]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={1.455}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cube008.geometry}
-            material={nodes.Cube008.material}
-            position={[-1.758, 2.174, -0.054]}
-            scale={1.353}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Curve021.geometry}
-            material={materials.SVGMat}
-            position={[-1.756, 1.81, 0.76]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={1.353}
-         >
+               geometry={nodes.Curve018.geometry}
+               material={materials['SVGMat.015']}
+               position={[-1.756, 2.22, -0.055]}
+               rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+               scale={1.748}
+            >
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve019.geometry}
+                  material={materials['SVGMat.016']}
+                  position={[-0.014, 0, 0.025]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve020.geometry}
+                  material={materials['SVGMat.016']}
+                  position={[0.034, 0, 0.025]}
+               />
+            </mesh>
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Cube014.geometry}
-               material={nodes.Cube014.material}
-               position={[0.001, -0.001, 0.033]}
-               rotation={[-Math.PI / 2, Math.PI / 2, 0]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Text002.geometry}
+               geometry={nodes.Text001.geometry}
                material={materials.Text}
-               position={[0.029, -0.003, 0.132]}
-               scale={1.391}
-            />
-         </mesh>
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Curve022.geometry}
-            material={materials['SVGMat.004']}
-            position={[-1.753, 1.804, 0.35]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={1.353}
-         >
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Cube015.geometry}
-               material={nodes.Cube015.material}
-               position={[-0.001, -0.003, 0.029]}
-               rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+               position={[-1.763, 2.048, -0.025]}
+               rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+               scale={1.455}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Curve023.geometry}
-               material={materials['SVGMat.005']}
-               position={[-0.114, 0.001, 0.114]}
+               geometry={nodes.Cube008.geometry}
+               material={nodes.Cube008.material}
+               position={[-1.758, 2.174, -0.054]}
+               scale={1.353}
+            />
+         </group>
+         {/* GithubFrame */}
+         <group name='GithubFrame'>
+            <mesh
+               castShadow
+               receiveShadow
+               geometry={nodes.Curve021.geometry}
+               material={materials.SVGMat}
+               position={[-1.756, 1.81, 0.76]}
+               rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+               scale={1.353}
+            >
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Cube014.geometry}
+                  material={nodes.Cube014.material}
+                  position={[0.001, -0.001, 0.033]}
+                  rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Text002.geometry}
+                  material={materials.Text}
+                  position={[0.029, -0.003, 0.132]}
+                  scale={1.391}
+               />
+            </mesh>
+         </group>
+         {/* LinkedInFrame */}
+         <group name='LinkedInFrame'>
+            <mesh
+               castShadow
+               receiveShadow
+               geometry={nodes.Curve022.geometry}
+               material={materials['SVGMat.004']}
+               position={[-1.753, 1.804, 0.35]}
+               rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+               scale={1.353}
+            >
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Cube015.geometry}
+                  material={nodes.Cube015.material}
+                  position={[-0.001, -0.003, 0.029]}
+                  rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Curve023.geometry}
+                  material={materials['SVGMat.005']}
+                  position={[-0.114, 0.001, 0.114]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Text003.geometry}
+                  material={materials.Text}
+                  position={[0.003, -0.005, 0.129]}
+                  scale={1.386}
+               />
+            </mesh>
+         </group>
+         <group name='Keyboard'>
+            <mesh
+               castShadow
+               receiveShadow
+               geometry={nodes.KeyboardButton021.geometry}
+               material={materials['Material.014']}
+               position={[-1.037, 0.98, 0.536]}
+               rotation={[Math.PI / 2, 1.448, -Math.PI / 2]}
+            >
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Cube018.geometry}
+                  material={nodes.Cube018.material}
+                  position={[-0.339, -0.022, 0.065]}
+                  rotation={[-0.049, 0, 0]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Cube019.geometry}
+                  material={nodes.Cube019.material}
+                  position={[-0.339, -0.033, -0.07]}
+                  rotation={[-0.049, 0, 0]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.kEYBOARDbASE.geometry}
+                  material={materials.Keyboard}
+                  position={[-0.078, -0.024, -0.001]}
+                  rotation={[-0.049, 0, 0]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.351, 0, -0.038]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton001.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.311, 0, -0.013]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton002.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.305, 0, 0.012]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton003.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.318, 0, 0.038]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton004.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.301, 0, -0.069]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton005.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.184, 0, -0.068]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton006.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.07, 0, -0.069]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton007.geometry}
+                  material={materials['Material.001']}
+                  position={[0.037, 0, -0.069]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton008.geometry}
+                  material={materials['Material.001']}
+                  position={[0.038, 0, -0.039]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton009.geometry}
+                  material={materials['Material.001']}
+                  position={[0.038, 0, -0.014]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton010.geometry}
+                  material={materials['Material.001']}
+                  position={[0.038, 0, 0.063]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton011.geometry}
+                  material={materials['Material.001']}
+                  position={[0.12, 0, -0.039]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton012.geometry}
+                  material={materials['Material.001']}
+                  position={[0.12, 0, -0.013]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton013.geometry}
+                  material={materials['Material.001']}
+                  position={[0.12, 0, 0.012]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton014.geometry}
+                  material={materials['Material.001']}
+                  position={[0.121, 0, 0.038]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton015.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.349, 0, 0.063]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton016.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.351, 0, -0.069]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton018.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.092, 0, 0.063]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton019.geometry}
+                  material={materials['Material.001']}
+                  position={[0.063, 0, 0.038]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButton020.geometry}
+                  material={materials['Material.001']}
+                  position={[0.171, 0, 0.063]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButtonSpace.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.188, 0, 0.063]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButtonSpace001.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.014, 0, 0.038]}
+                  scale={[0.781, 1, 1]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButtonSpace002.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.004, 0, -0.038]}
+                  scale={[0.693, 1, 1]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButtonSpace003.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.341, 0, 0.012]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButtonSpace004.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.348, 0, 0.038]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButtonSpace005.geometry}
+                  material={materials['Material.001']}
+                  position={[-0.345, 0, -0.013]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButtonSpace006.geometry}
+                  material={materials['Material.001']}
+                  position={[0.133, 0, 0.063]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButtonSpace007.geometry}
+                  material={materials['Material.001']}
+                  position={[0.197, 0, 0.051]}
+                  rotation={[0, 1.571, 0]}
+               />
+               <mesh
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.KeyboardButtonSpace008.geometry}
+                  material={materials['Material.001']}
+                  position={[0.197, 0, 0]}
+                  rotation={[0, 1.571, 0]}
+               />
+            </mesh>
+            <mesh
+               castShadow
+               receiveShadow
+               geometry={nodes.Cylinder013.geometry}
+               material={nodes.Cylinder013.material}
+               position={[-1.118, 0.977, 0.616]}
+               rotation={[Math.PI / 2, 0, -Math.PI / 2]}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Text003.geometry}
-               material={materials.Text}
-               position={[0.003, -0.005, 0.129]}
-               scale={1.386}
-            />
-         </mesh>
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.KeyboardButton021.geometry}
-            material={materials['Material.014']}
-            position={[-1.037, 0.98, 0.536]}
-            rotation={[Math.PI / 2, 1.448, -Math.PI / 2]}
-         >
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.Cube018.geometry}
-               material={nodes.Cube018.material}
-               position={[-0.339, -0.022, 0.065]}
-               rotation={[-0.049, 0, 0]}
+               geometry={nodes.BézierCurve003.geometry}
+               material={materials.KeyboardCable}
+               position={[-1.197, 0.976, 0.616]}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.Cube019.geometry}
-               material={nodes.Cube019.material}
-               position={[-0.339, -0.033, -0.07]}
-               rotation={[-0.049, 0, 0]}
+               geometry={nodes.Plane009.geometry}
+               material={materials.test}
+               position={[-1.025, 0.974, 0.709]}
+               rotation={[0, 0, -0.124]}
+               scale={[-0.061, -0.078, -0.187]}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.kEYBOARDbASE.geometry}
-               material={materials.Keyboard}
-               position={[-0.078, -0.024, -0.001]}
-               rotation={[-0.049, 0, 0]}
+               geometry={nodes.Plane010.geometry}
+               material={materials.test}
+               position={[-1.065, 0.98, 0.473]}
+               rotation={[0, 0, -0.124]}
+               scale={[-0.021, -0.02, -0.036]}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.KeyboardButton.geometry}
-               material={materials['Material.001']}
-               position={[-0.351, 0, -0.038]}
+               geometry={nodes.Plane011.geometry}
+               material={materials.test}
+               position={[-1.027, 0.974, 0.376]}
+               rotation={[0, 0, -0.124]}
+               scale={[-0.06, -0.021, -0.047]}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.KeyboardButton001.geometry}
-               material={materials['Material.001']}
-               position={[-0.311, 0, -0.013]}
+               geometry={nodes.Plane012.geometry}
+               material={materials.test}
+               position={[-0.975, 0.968, 0.472]}
+               rotation={[0, 0, -0.124]}
+               scale={[-0.011, -0.017, -0.036]}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.KeyboardButton002.geometry}
-               material={materials['Material.001']}
-               position={[-0.305, 0, 0.012]}
+               geometry={nodes.Plane013.geometry}
+               material={materials.test}
+               position={[-1, 0.972, 0.472]}
+               rotation={[0, 0, -0.124]}
+               scale={[-0.011, -0.017, -0.01]}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.KeyboardButton003.geometry}
-               material={materials['Material.001']}
-               position={[-0.318, 0, 0.038]}
+               geometry={nodes.Plane014.geometry}
+               material={materials.test}
+               position={[-1.107, 0.985, 0.473]}
+               rotation={[0, 0, -0.124]}
+               scale={[-0.011, -0.02, -0.036]}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.KeyboardButton004.geometry}
-               material={materials['Material.001']}
-               position={[-0.301, 0, -0.069]}
+               geometry={nodes.Plane015.geometry}
+               material={materials.test}
+               position={[-1.106, 0.984, 0.798]}
+               rotation={[0, 0, -0.124]}
+               scale={[-0.011, -0.077, -0.048]}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.KeyboardButton005.geometry}
-               material={materials['Material.001']}
-               position={[-0.184, 0, -0.068]}
+               geometry={nodes.Plane016.geometry}
+               material={materials.test}
+               position={[-1.105, 0.984, 0.683]}
+               rotation={[0, 0, -0.124]}
+               scale={[-0.011, -0.077, -0.048]}
             />
             <mesh
                castShadow
                receiveShadow
-               geometry={nodes.KeyboardButton006.geometry}
-               material={materials['Material.001']}
-               position={[-0.07, 0, -0.069]}
+               geometry={nodes.Plane017.geometry}
+               material={materials.test}
+               position={[-1.106, 0.984, 0.568]}
+               rotation={[0, 0, -0.124]}
+               scale={[-0.011, -0.077, -0.048]}
             />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton007.geometry}
-               material={materials['Material.001']}
-               position={[0.037, 0, -0.069]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton008.geometry}
-               material={materials['Material.001']}
-               position={[0.038, 0, -0.039]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton009.geometry}
-               material={materials['Material.001']}
-               position={[0.038, 0, -0.014]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton010.geometry}
-               material={materials['Material.001']}
-               position={[0.038, 0, 0.063]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton011.geometry}
-               material={materials['Material.001']}
-               position={[0.12, 0, -0.039]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton012.geometry}
-               material={materials['Material.001']}
-               position={[0.12, 0, -0.013]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton013.geometry}
-               material={materials['Material.001']}
-               position={[0.12, 0, 0.012]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton014.geometry}
-               material={materials['Material.001']}
-               position={[0.121, 0, 0.038]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton015.geometry}
-               material={materials['Material.001']}
-               position={[-0.349, 0, 0.063]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton016.geometry}
-               material={materials['Material.001']}
-               position={[-0.351, 0, -0.069]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton018.geometry}
-               material={materials['Material.001']}
-               position={[-0.092, 0, 0.063]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton019.geometry}
-               material={materials['Material.001']}
-               position={[0.063, 0, 0.038]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButton020.geometry}
-               material={materials['Material.001']}
-               position={[0.171, 0, 0.063]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButtonSpace.geometry}
-               material={materials['Material.001']}
-               position={[-0.188, 0, 0.063]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButtonSpace001.geometry}
-               material={materials['Material.001']}
-               position={[-0.014, 0, 0.038]}
-               scale={[0.781, 1, 1]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButtonSpace002.geometry}
-               material={materials['Material.001']}
-               position={[-0.004, 0, -0.038]}
-               scale={[0.693, 1, 1]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButtonSpace003.geometry}
-               material={materials['Material.001']}
-               position={[-0.341, 0, 0.012]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButtonSpace004.geometry}
-               material={materials['Material.001']}
-               position={[-0.348, 0, 0.038]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButtonSpace005.geometry}
-               material={materials['Material.001']}
-               position={[-0.345, 0, -0.013]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButtonSpace006.geometry}
-               material={materials['Material.001']}
-               position={[0.133, 0, 0.063]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButtonSpace007.geometry}
-               material={materials['Material.001']}
-               position={[0.197, 0, 0.051]}
-               rotation={[0, 1.571, 0]}
-            />
-            <mesh
-               castShadow
-               receiveShadow
-               geometry={nodes.KeyboardButtonSpace008.geometry}
-               material={materials['Material.001']}
-               position={[0.197, 0, 0]}
-               rotation={[0, 1.571, 0]}
-            />
-         </mesh>
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Cylinder013.geometry}
-            material={nodes.Cylinder013.material}
-            position={[-1.118, 0.977, 0.616]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.BézierCurve003.geometry}
-            material={materials.KeyboardCable}
-            position={[-1.197, 0.976, 0.616]}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane009.geometry}
-            material={materials.test}
-            position={[-1.025, 0.974, 0.709]}
-            rotation={[0, 0, -0.124]}
-            scale={[-0.061, -0.078, -0.187]}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane010.geometry}
-            material={materials.test}
-            position={[-1.065, 0.98, 0.473]}
-            rotation={[0, 0, -0.124]}
-            scale={[-0.021, -0.02, -0.036]}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane011.geometry}
-            material={materials.test}
-            position={[-1.027, 0.974, 0.376]}
-            rotation={[0, 0, -0.124]}
-            scale={[-0.06, -0.021, -0.047]}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane012.geometry}
-            material={materials.test}
-            position={[-0.975, 0.968, 0.472]}
-            rotation={[0, 0, -0.124]}
-            scale={[-0.011, -0.017, -0.036]}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane013.geometry}
-            material={materials.test}
-            position={[-1, 0.972, 0.472]}
-            rotation={[0, 0, -0.124]}
-            scale={[-0.011, -0.017, -0.01]}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane014.geometry}
-            material={materials.test}
-            position={[-1.107, 0.985, 0.473]}
-            rotation={[0, 0, -0.124]}
-            scale={[-0.011, -0.02, -0.036]}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane015.geometry}
-            material={materials.test}
-            position={[-1.106, 0.984, 0.798]}
-            rotation={[0, 0, -0.124]}
-            scale={[-0.011, -0.077, -0.048]}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane016.geometry}
-            material={materials.test}
-            position={[-1.105, 0.984, 0.683]}
-            rotation={[0, 0, -0.124]}
-            scale={[-0.011, -0.077, -0.048]}
-         />
-         <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane017.geometry}
-            material={materials.test}
-            position={[-1.106, 0.984, 0.568]}
-            rotation={[0, 0, -0.124]}
-            scale={[-0.011, -0.077, -0.048]}
-         />
+         </group>
       </group>
    )
 }

@@ -11,7 +11,7 @@ export default function HomePage() {
             shadows={true}
             frameloop='demand'
             className='bg-transparent w-full h-full'
-            camera={{ near: 0.1, far: 50, fov: 80 }}
+            camera={{ near: 0.01, far: 100, fov: 80, position: [1.5, 1.4, 2] }}
          >
             <directionalLight
                color={'#ffffff'}

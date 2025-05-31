@@ -81,7 +81,7 @@ export default function TechStack({
                   castShadow
                   receiveShadow
                   geometry={nodes.Cube005.geometry}
-                  material={nodes.Cube005.material}
+                  material={materials.PictureFrame}
                   position={[-1.757, 2.174, 1.166]}
                   scale={1.353}
                />
@@ -151,7 +151,7 @@ export default function TechStack({
                   castShadow
                   receiveShadow
                   geometry={nodes.Cube006.geometry}
-                  material={nodes.Cube006.material}
+                  material={materials.PictureFrame}
                   position={[-1.757, 2.174, 0.759]}
                   scale={1.353}
                />
@@ -207,7 +207,7 @@ export default function TechStack({
                   castShadow
                   receiveShadow
                   geometry={nodes.Cube007.geometry}
-                  material={nodes.Cube007.material}
+                  material={materials.PictureFrame}
                   position={[-1.758, 2.174, 0.353]}
                   scale={1.353}
                />
@@ -251,7 +251,7 @@ export default function TechStack({
                   castShadow
                   receiveShadow
                   geometry={nodes.Cube008.geometry}
-                  material={nodes.Cube008.material}
+                  material={materials.PictureFrame}
                   position={[-1.758, 2.174, -0.054]}
                   scale={1.353}
                />
@@ -286,7 +286,7 @@ export default function TechStack({
                      castShadow
                      receiveShadow
                      geometry={nodes.Cube014.geometry}
-                     material={nodes.Cube014.material}
+                     material={materials.PictureFrame}
                      position={[0.001, -0.001, 0.033]}
                      rotation={[-Math.PI / 2, Math.PI / 2, 0]}
                   />
@@ -315,7 +315,7 @@ export default function TechStack({
                      castShadow
                      receiveShadow
                      geometry={nodes.Cube015.geometry}
-                     material={nodes.Cube015.material}
+                     material={materials.PictureFrame}
                      position={[-0.001, -0.003, 0.029]}
                      rotation={[-Math.PI / 2, Math.PI / 2, 0]}
                   />

@@ -18,13 +18,13 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
 
    useFrame((state) => {
       // The offset is between 0 and 1, you can apply it to your models any way you like
-      const offset = 0.3 - scroll.offset
+      const offset = 0.35 - scroll.offset
       state.camera.position.set(
-         Math.sin(offset) * 5,
-         Math.atan(offset * Math.PI) * 2,
-         Math.cos(offset * Math.PI) * 4
+         Math.sin(offset),
+         Math.atan(offset * Math.PI) * 4,
+         Math.cos((offset * Math.PI) / 2) * 4
       )
-      state.camera.lookAt(0, 0, 0)
+      // state.camera.lookAt(1, 1, 1)
    })
 
    return (
@@ -194,6 +194,7 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
             {/* <spotLight color={'#ffffff'} position={[-0, 0, 0]} intensity={10} angle={0.7} penumbra={1} /> */}
          </mesh>
          <mesh
+            name='Flower'
             castShadow
             receiveShadow
             geometry={nodes.Flower.geometry}

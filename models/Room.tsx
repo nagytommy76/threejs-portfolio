@@ -3,8 +3,7 @@
 import React, { JSX, useRef } from 'react'
 import * as THREE from 'three'
 
-import { Html, useGLTF, useScroll } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { Html, useGLTF } from '@react-three/drei'
 
 import type GLTFResult from './Types'
 
@@ -13,19 +12,6 @@ import TechStack from './TechStack'
 export default function Room(props: JSX.IntrinsicElements['group']) {
    const roomRef = useRef(THREE.Mesh)
    const { nodes, materials } = useGLTF('/3d/Room.glb') as unknown as GLTFResult
-
-   const scroll = useScroll()
-
-   useFrame((state) => {
-      // The offset is between 0 and 1, you can apply it to your models any way you like
-      const offset = 0.35 - scroll.offset
-      state.camera.position.set(
-         Math.sin(offset),
-         Math.atan(offset * Math.PI) * 4,
-         Math.cos((offset * Math.PI) / 2) * 4
-      )
-      // state.camera.lookAt(1, 1, 1)
-   })
 
    return (
       <group ref={roomRef} {...props}>

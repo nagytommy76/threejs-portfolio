@@ -1,12 +1,12 @@
 'use client'
-// import { Suspense } from 'react'
+import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, ScrollControls } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import Room from '@/models/Room'
 
 export default function HomePage() {
    return (
-      <section className='h-screen'>
+      <section id='scroll-container' className='h-screen sticky'>
          <Canvas
             shadows={true}
             frameloop='demand'
@@ -34,18 +34,17 @@ export default function HomePage() {
                shadow-bias={-0.005}
             />
             <ambientLight intensity={0.2} />
-            {/* <Suspense fallback={null}> */}
-            <OrbitControls
-               // enablePan={true}
-               enableZoom={false}
-               // minPolarAngle={Math.PI / 52}
-               // maxPolarAngle={Math.PI / 2.4}
-               // maxDistance={5}
-            />
-            <ScrollControls pages={3} damping={0.25}>
+            <Suspense fallback={null}>
+               <OrbitControls
+                  enablePan={true}
+                  enableZoom={false}
+                  minPolarAngle={Math.PI / 52}
+                  maxPolarAngle={Math.PI / 2.4}
+                  maxAzimuthAngle={Math.PI / 2}
+                  maxDistance={5}
+               />
                <Room />
-            </ScrollControls>
-            {/* </Suspense> */}
+            </Suspense>
          </Canvas>
       </section>
    )

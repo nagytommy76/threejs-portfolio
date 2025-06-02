@@ -1,5 +1,7 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { useThree } from '@react-three/fiber'
+import { gsap } from 'gsap'
 
 import type GLTFResult from './Types'
 
@@ -12,6 +14,31 @@ export default function TechStack({
 }) {
    const [hoveredTechStack, setHoveredTechStack] = useState<boolean>(false)
    const [hoveredSocial, setHoveredSocial] = useState<boolean>(false)
+   const { camera } = useThree()
+   // const cameraRef = useRef(camera)
+
+   useEffect(() => {
+      // Initial isometric-like position
+      camera.position.set(10, 10, 10)
+      camera.lookAt(0, 0, 0)
+
+      // Animate on scroll
+      gsap.to(camera.position, {
+         scrollTrigger: {
+            trigger: '#scroll-container', // your scroll container
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: true,
+         },
+         x: -10,
+         y: 20,
+         z: 5,
+         ease: 'power1.inOut',
+         onUpdate: () => {
+            camera.lookAt(0, 0, 0)
+         },
+      })
+   }, [camera])
 
    useEffect(() => {
       document.body.style.cursor = hoveredTechStack || hoveredSocial ? 'pointer' : 'auto'
@@ -22,7 +49,10 @@ export default function TechStack({
          <group
             name='TechStacks'
             onClick={() => console.log('TechStacks')}
-            onPointerEnter={() => setHoveredTechStack(true)}
+            onPointerEnter={() => {
+               setHoveredTechStack(true)
+               // gsap.to(cameraRef.current.position, { duration: 0.5, x: 1.5, y: 1, z: 0 })
+            }}
             onPointerLeave={() => setHoveredTechStack(false)}
          >
             {hoveredTechStack && (

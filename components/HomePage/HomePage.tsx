@@ -4,16 +4,20 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import Room from '@/models/Room'
 
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 export default function HomePage() {
    return (
-      <section id='scroll-container' className='h-screen sticky'>
+      <section className='scroll h-screen w-full fixed top-0 z-10'>
          <Canvas
             shadows={true}
-            frameloop='demand'
-            className='bg-transparent w-full h-full'
+            // frameloop='demand'
+            className='scroll bg-transparent w-full h-full'
             camera={{
                near: 0.01,
-               far: 100,
+               far: 70,
                fov: 90,
                position: [3, 2.5, 3],
             }}
@@ -36,9 +40,11 @@ export default function HomePage() {
             <ambientLight intensity={0.2} />
             <Suspense fallback={null}>
                <OrbitControls
-                  enablePan={true}
+                  enablePan={false}
                   enableZoom={false}
-                  minPolarAngle={Math.PI / 52}
+                  // enableDamping={false}
+                  enableRotate={false}
+                  minPolarAngle={Math.PI / 5}
                   maxPolarAngle={Math.PI / 2.4}
                   maxAzimuthAngle={Math.PI / 2}
                   maxDistance={5}

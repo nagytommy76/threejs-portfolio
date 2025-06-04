@@ -4,6 +4,9 @@ import React, { JSX, useRef } from 'react'
 import * as THREE from 'three'
 
 import { Html, useGLTF } from '@react-three/drei'
+import { useThree } from '@react-three/fiber'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 import type GLTFResult from './Types'
 
@@ -12,6 +15,39 @@ import TechStack from './TechStack'
 export default function Room(props: JSX.IntrinsicElements['group']) {
    const roomRef = useRef(THREE.Mesh)
    const { nodes, materials } = useGLTF('/3d/Room.glb') as unknown as GLTFResult
+   const { camera } = useThree()
+   const gsapTimeline = gsap.timeline()
+
+   useGSAP(() => {
+      // Animate on scroll
+      gsapTimeline
+         .to(camera.position, {
+            x: 5,
+            y: 7,
+            z: 8,
+            // ease: 'sine.in',
+            scrollTrigger: {
+               trigger: '.second-scroll',
+               start: 'top bottom',
+               end: 'top top',
+               scrub: true,
+               markers: true,
+            },
+         })
+         .to(camera.position, {
+            x: 2,
+            y: 3,
+            z: 1,
+            // ease: 'sine.in',
+            scrollTrigger: {
+               trigger: '.third-scroll',
+               start: 'top bottom',
+               end: 'top top',
+               scrub: true,
+               markers: true,
+            },
+         })
+   }, [])
 
    return (
       <group ref={roomRef} {...props}>

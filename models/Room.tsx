@@ -4,7 +4,7 @@ import React, { JSX, useRef } from 'react'
 import * as THREE from 'three'
 
 import { Html, useGLTF } from '@react-three/drei'
-import { useThree } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 
@@ -15,29 +15,39 @@ import TechStack from './TechStack'
 export default function Room(props: JSX.IntrinsicElements['group']) {
    const roomRef = useRef(THREE.Mesh)
    const { nodes, materials } = useGLTF('/3d/Room.glb') as unknown as GLTFResult
-   const { camera } = useThree()
+   const { camera, invalidate } = useThree()
    const gsapTimeline = gsap.timeline()
+   /**
+    * https://www.youtube.com/watch?v=_qzuECf1h2w&ab_channel=ThabishKader
+    * https://github.com/Thabish-Kader/r3f-scroll/blob/main/scroll-based-animaiton/src/components/CanvasContainer.tsx
+    */
+
+   useFrame(() => {
+      console.log(camera.position)
+   }, [])
 
    useGSAP(() => {
       // Animate on scroll
+      // console.log(camera.position)
       gsapTimeline
+         // .to(camera.position, {
+         //    x: 5,
+         //    y: 7,
+         //    z: 8,
+         //    // ease: 'sine.in',
+         //    scrollTrigger: {
+         //       trigger: '.second-scroll',
+         //       start: 'top bottom',
+         //       end: 'top top',
+         //       scrub: true,
+         //       markers: true,
+         //    },
+         //    onUpdate: () => invalidate(),
+         // })
          .to(camera.position, {
-            x: 5,
-            y: 7,
-            z: 8,
-            // ease: 'sine.in',
-            scrollTrigger: {
-               trigger: '.second-scroll',
-               start: 'top bottom',
-               end: 'top top',
-               scrub: true,
-               markers: true,
-            },
-         })
-         .to(camera.position, {
-            x: 2,
-            y: 3,
-            z: 1,
+            x: -0.423240517664081,
+            y: 2.391182412776643,
+            z: 0.3539099617536869,
             // ease: 'sine.in',
             scrollTrigger: {
                trigger: '.third-scroll',
@@ -46,8 +56,9 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
                scrub: true,
                markers: true,
             },
+            onUpdate: () => invalidate(),
          })
-   }, [])
+   }, [camera.position])
 
    return (
       <group ref={roomRef} {...props}>

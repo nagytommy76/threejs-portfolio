@@ -13,14 +13,20 @@ export default function HomePage() {
       <section className='scroll h-screen w-full fixed top-0 z-10'>
          <Canvas
             shadows={true}
-            // frameloop='demand'
+            frameloop='demand'
             className='scroll bg-transparent w-full h-full'
             camera={{
                near: 0.01,
                far: 70,
                fov: 90,
-               position: [3, 2.5, 3],
+               // position: [3, 2.5, 3],
+               // X: jobbra-balra
+               // Y: magasság
+               // Z:előre hátra, ablak oldalon
+               // rotation: [0, 0, 20],
+               position: [0, 0, 0],
             }}
+            orthographic
          >
             <directionalLight
                color={'#ffffff'}
@@ -39,10 +45,13 @@ export default function HomePage() {
             />
             <ambientLight intensity={0.2} />
             <Suspense fallback={null}>
+               {/* <PerspectiveCamera makeDefault manual position={[5, -9, 5]} /> */}
                <OrbitControls
+                  // enablePan={true}
+                  // enableZoom={true}
+                  // enableRotate={true}
                   enablePan={false}
                   enableZoom={false}
-                  // enableDamping={false}
                   enableRotate={false}
                   minPolarAngle={Math.PI / 5}
                   maxPolarAngle={Math.PI / 2.4}

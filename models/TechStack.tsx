@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import type GLTFResult from './Types'
 
+import useMoveToTechStack from '@/components/Hooks/useMoveToTechStack'
+
 export default function TechStack({
    nodes,
    materials,
@@ -11,6 +13,7 @@ export default function TechStack({
 }) {
    const [hoveredTechStack, setHoveredTechStack] = useState<boolean>(false)
    const [hoveredSocial, setHoveredSocial] = useState<boolean>(false)
+   useMoveToTechStack()
 
    useEffect(() => {
       document.body.style.cursor = hoveredTechStack || hoveredSocial ? 'pointer' : 'auto'
@@ -20,7 +23,6 @@ export default function TechStack({
       <>
          <group
             name='TechStacks'
-            onClick={(e) => console.log(e.object.position)}
             onPointerEnter={() => {
                setHoveredTechStack(true)
             }}
@@ -32,7 +34,7 @@ export default function TechStack({
                   width={1.7}
                   height={0.45}
                   position={[-1.72, 2.15, 0.55]}
-                  rotation={[0, 1, 0]}
+                  rotation={[0, 1.57, 0]}
                />
             )}
             {/* ReactFrame */}

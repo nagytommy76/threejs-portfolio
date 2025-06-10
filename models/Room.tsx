@@ -4,9 +4,6 @@ import React, { JSX, useRef } from 'react'
 import * as THREE from 'three'
 
 import { Html, useGLTF } from '@react-three/drei'
-import { useThree } from '@react-three/fiber'
-import { gsap } from 'gsap'
-import { useGSAP } from '@gsap/react'
 
 import type GLTFResult from './Types'
 
@@ -16,55 +13,9 @@ export default function Room(props: JSX.IntrinsicElements['group']) {
    const roomRef = useRef(THREE.Mesh)
 
    const { nodes, materials } = useGLTF('/3d/Room.glb') as unknown as GLTFResult
-   const { camera, invalidate } = useThree()
-   const gsapTimeline = gsap.timeline()
-   /**
-    * https://www.youtube.com/watch?v=_qzuECf1h2w&ab_channel=ThabishKader
-    * https://github.com/Thabish-Kader/r3f-scroll/blob/main/scroll-based-animaiton/src/components/CanvasContainer.tsx
-    */
-   // useFrame(() => {
-   //    console.log('CAMERA POSITION: ', camera.position)
-   //    console.log('scene ROTATION: ', scene.rotation)
-   // })
-
-   useGSAP(() => {
-      // -1.599, 0.95, 1.451
-      gsapTimeline.to(camera.position, {
-         x: 0,
-         y: 0,
-         z: 0,
-         // ease: 'sine.in',
-         scrollTrigger: {
-            trigger: '.third-scroll',
-            start: 'top bottom',
-            end: 'top top',
-            scrub: true,
-         },
-         onUpdate: () => {
-            camera.lookAt(0, 0, 0)
-            invalidate()
-         },
-      })
-      // .to(scene.rotation, {
-      //    x: 0,
-      //    y: 0,
-      //    z: 0,
-      //    ease: 'sine.in',
-      //    scrollTrigger: {
-      //       trigger: '.third-scroll',
-      //       start: 'top bottom',
-      //       end: 'top top',
-      //       scrub: true,
-      //    },
-      //    onUpdate: () => {
-      //       camera.lookAt(0, 0, 0)
-      //       invalidate()
-      //    },
-      // })
-   }, [camera.position])
 
    return (
-      <group ref={roomRef} {...props} rotation={[0.55, 0, 0]}>
+      <group ref={roomRef} {...props}>
          <mesh
             castShadow
             receiveShadow

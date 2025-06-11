@@ -26,7 +26,6 @@ export default function RootLayout({
       <html lang='en'>
          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
             <main className=''>{children}</main>
-            <footer className='row-start-3 flex gap-[24px] flex-wrap items-center justify-center'></footer>
          </body>
       </html>
    )

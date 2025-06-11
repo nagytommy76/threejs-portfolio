@@ -12,12 +12,12 @@ export default function useMoveToTechStack() {
    const gsapTimeline = gsap.timeline()
 
    function moveCameraToTechStack() {
-      gsapTimeline.from('.second-scroll', {
-         translateX: '50%',
-         transformOrigin: 'center center',
-         duration: 1.5,
-         ease: 'power1.inOut',
-      })
+      // gsapTimeline.from('.second-scroll', {
+      //    translateX: '50%',
+      //    transformOrigin: 'center center',
+      //    duration: 1.5,
+      //    ease: 'power1.inOut',
+      // })
 
       gsapTimeline
          .to(camera.position, {
@@ -48,6 +48,23 @@ export default function useMoveToTechStack() {
             onUpdate: () => {
                camera.lookAt(0, 0, 0)
                invalidate()
+            },
+         })
+         // .fromTo('.second-scroll', { translateX: '100%', opacity: 0 }, { translateX: '0%', opacity: 1 }, 1.5)
+         .to('.second-scroll', {
+            // translateX: '100%',
+            xPercent: 99,
+            transformOrigin: 'center center',
+            opacity: 1,
+            duration: 3,
+            // ease: 'power1.inOut',
+            scrollTrigger: {
+               trigger: '.second-scroll',
+               toggleActions: 'play none none reverse',
+               start: 'top center',
+               end: 'top top',
+               pin: true,
+               scrub: true,
             },
          })
    }

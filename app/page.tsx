@@ -6,7 +6,7 @@ export default function Home() {
       <>
          <HomePage />
          {/* Dummy placeholder section */}
-         <section className='h-screen relative'></section>
+         <section className='-z-1 h-screen relative'></section>
          <TechStackPage />
          <section className='third-scroll h-screen relative'>
             <h1>Harmadik oldal</h1>
